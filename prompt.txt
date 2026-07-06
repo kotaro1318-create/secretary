@@ -1,10 +1,10 @@
-今日のGoogleカレンダーの予定を確認し、secretaryシステムのTODOファイルを作成・更新してください。確認や許可を求めずに直接ファイルを作成・更新してください。
+今日のGoogleカレンダーの予定を確認し、secretaryシステムのTODOファイルを作成・更新し、さらにNotionとSlackに転送してください。確認や許可を求めずに直接実行してください。以下の手順1〜6は毎回すべて実行すること（一部だけ実行して終了しないこと）。
 
 手順:
 1. mcp__google-calendar__list-events で今日（Asia/Tokyo）の primary カレンダーのイベントを取得する
 2. 今日の日付（Asia/Tokyo）を YYYY-MM-DD 形式で確認する
 3. .secretary\todos\YYYY-MM-DD.md（今日の日付）を確認する
-   - ファイルがない場合: 以下のフォーマットで新規作成する
+   - ファイルがない場合: 下記フォーマットで新規作成する
    - ファイルがある場合: ## スケジュール セクションのみ更新し、他のセクションは変更しない
 
 新規作成時のファイルフォーマット（このまま使うこと）:
@@ -44,4 +44,17 @@ type: daily
 スケジュールセクション形式（イベントなし）:
 （本日の予定なし）
 
-4. ファイルを保存して完了と出力する
+4. ファイルを保存する
+
+5. Notion転送（必須。スキップしないこと）
+   - mcp__claude_ai_Notion__notion-update-page を呼び出す
+   - page_id: "390faf19-4002-81b1-b4a8-d7cd30658b9f"（Secretary Daily Tasksページ）
+   - command: "replace_content"
+   - new_str に、手順3で作成/更新した本日のTODOファイルの内容（スケジュール・最優先・通常・余裕があれば・完了の各セクション）と、冒頭に「最終更新: YYYY-MM-DD HH:mm（Asia/Tokyo）」を含めること
+
+6. Slack転送（必須。スキップしないこと）
+   - mcp__claude_ai_Slack__slack_send_message を呼び出す
+   - channel_id: "UBKP1SFCN"（自分自身へのセルフDM）
+   - message に、日付・スケジュール・最優先タスク・通常タスクを簡潔にまとめたMarkdownを設定すること
+
+7. 全ステップの実行結果（成功/失敗）を簡潔に出力する。いずれかのステップでエラーが発生しても、他のステップは必ず継続すること。
