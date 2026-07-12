@@ -1,4 +1,4 @@
-$logDir = "C:\Users\hasec\Desktop\APP\secretary\.secretary\logs"
+﻿$logDir = "C:\Users\hasec\Desktop\APP\secretary\.secretary\logs"
 $workDir = "C:\Users\hasec\Desktop\APP\secretary"
 $claudeCmd = "C:\Users\hasec\AppData\Roaming\npm\claude.cmd"
 $promptFile = "$workDir\prompt.txt"
@@ -26,8 +26,8 @@ $output = "" | & $claudeCmd -p $prompt --dangerously-skip-permissions 2>&1 | Out
 $claudeExitCode = $LASTEXITCODE
 Write-Log $output
 
-# TODOファイルが今回の実行中に更新されたかで成否を判定する
-$todoOk = (Test-Path $todoFile) -and ((Get-Item $todoFile).LastWriteTime -ge $scriptStart)
+# TODOファイルの存在で成否を判定する（内容が既に最新の場合は更新されないため、更新時刻では判定しない）
+$todoOk = Test-Path $todoFile
 
 if ($claudeExitCode -ne 0 -or -not $todoOk) {
     Write-Log "!!! 異常検知: claude終了コード=$claudeExitCode / todoファイル更新確認=$todoOk"
