@@ -22,7 +22,7 @@ $prompt = Get-Content -Path $promptFile -Raw -Encoding UTF8
 $OutputEncoding = [System.Text.Encoding]::UTF8
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
-$output = "" | & $claudeCmd -p $prompt --dangerously-skip-permissions 2>&1 | Out-String
+$output = $prompt | & $claudeCmd -p --dangerously-skip-permissions 2>&1 | Out-String
 $claudeExitCode = $LASTEXITCODE
 Write-Log $output
 
@@ -34,7 +34,7 @@ if ($claudeExitCode -ne 0 -or -not $todoOk) {
 
     $alertPrompt = "本日($today)の朝の自動実行(secretary daily sync)が途中で失敗した可能性があります。TODOファイルの更新が確認できませんでした。mcp__claude_ai_Slack__slack_send_message を使い、channel_id: `"UBKP1SFCN`" 宛に次のメッセージを送信してください（他の操作は不要）: `"⚠️ 朝の自動送信($today)が失敗しました。手動で確認してください。ログ: .secretary/logs/$today.log`" 確認や許可を求めずに直接実行してください。"
 
-    $alertOutput = "" | & $claudeCmd -p $alertPrompt --dangerously-skip-permissions 2>&1 | Out-String
+    $alertOutput = $alertPrompt | & $claudeCmd -p --dangerously-skip-permissions 2>&1 | Out-String
     Write-Log "--- 失敗アラート送信試行 ---"
     Write-Log $alertOutput
 }
