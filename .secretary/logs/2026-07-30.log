@@ -1,0 +1,32 @@
+=== 2026-07-30 05:00:03 開始 ===
+claude.cmd : Permission allow rule (.claude\settings.local.json): Write(C:\\Users\\hasec\\OneDrive\\Desktop\\secretary\
+\.secretary\\**) is not matched by file permission checks — only Edit(path) rules are. Use Edit(C:\\Users\\hasec\\OneDr
+ive\\Desktop\\secretary\\.secretary\\**) instead (Edit rules cover all file-editing tools).
+発生場所 C:\Users\hasec\Desktop\APP\secretary\run-secretary.ps1:25 文字:21
++ ... = $prompt | & $claudeCmd -p --dangerously-skip-permissions 2>&1 | Out ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Permission allo...editing tools).:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Permission allow rule (.claude\settings.local.json): Write(C:\\Users\\hasec\\Desktop\\APP\\secretary\\.secretary\\**) i
+s not matched by file permission checks — only Edit(path) rules are. Use Edit(C:\\Users\\hasec\\Desktop\\APP\\secretary
+\\.secretary\\**) instead (Edit rules cover all file-editing tools).
+API Error: 529 Overloaded. This is a server-side issue, usually temporary — try again in a moment. If it persists, check https://status.claude.com.
+
+!!! 異常検知: claude終了コード=1 / todoファイル更新確認=False
+--- 失敗アラート送信試行 ---
+claude.cmd : Permission allow rule (.claude\settings.local.json): Write(C:\\Users\\hasec\\OneDrive\\Desktop\\secretary\
+\.secretary\\**) is not matched by file permission checks — only Edit(path) rules are. Use Edit(C:\\Users\\hasec\\OneDr
+ive\\Desktop\\secretary\\.secretary\\**) instead (Edit rules cover all file-editing tools).
+発生場所 C:\Users\hasec\Desktop\APP\secretary\run-secretary.ps1:37 文字:35
++ ... ertPrompt | & $claudeCmd -p --dangerously-skip-permissions 2>&1 | Out ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Permission allo...editing tools).:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Permission allow rule (.claude\settings.local.json): Write(C:\\Users\\hasec\\Desktop\\APP\\secretary\\.secretary\\**) i
+s not matched by file permission checks — only Edit(path) rules are. Use Edit(C:\\Users\\hasec\\Desktop\\APP\\secretary
+\\.secretary\\**) instead (Edit rules cover all file-editing tools).
+API Error: 529 Overloaded. This is a server-side issue, usually temporary — try again in a moment. If it persists, check https://status.claude.com.
+
+=== 2026-07-30 05:06:46 完了 ===

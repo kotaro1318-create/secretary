@@ -1,0 +1,37 @@
+=== 2026-08-07 05:00:02 開始 ===
+claude.cmd : Permission allow rule (.claude\settings.local.json): Write(C:\\Users\\hasec\\OneDrive\\Desktop\\secretary\
+\.secretary\\**) is not matched by file permission checks — only Edit(path) rules are. Use Edit(C:\\Users\\hasec\\OneDr
+ive\\Desktop\\secretary\\.secretary\\**) instead (Edit rules cover all file-editing tools).
+発生場所 C:\Users\hasec\Desktop\APP\secretary\run-secretary.ps1:25 文字:21
++ ... = $prompt | & $claudeCmd -p --dangerously-skip-permissions 2>&1 | Out ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Permission allo...editing tools).:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Permission allow rule (.claude\settings.local.json): Write(C:\\Users\\hasec\\Desktop\\APP\\secretary\\.secretary\\**) i
+s not matched by file permission checks — only Edit(path) rules are. Use Edit(C:\\Users\\hasec\\Desktop\\APP\\secretary
+\\.secretary\\**) instead (Edit rules cover all file-editing tools).
+Slack送信も完了しました。全ステップの実行結果を報告します。
+
+## 実行結果（2026-08-07）
+
+| 手順 | 結果 |
+|---|---|
+| 1. カレンダー取得 | ✅ ローカル版google-calendar MCPは認証切れ（既知の恒常障害）のため、claude.ai連携版で代替取得。4件（重複1件は統合し3件として整理） |
+| 2. 日付確認 | ✅ 2026-08-07（金） |
+| 3. 医療ニュース検索 | ✅ 3カテゴリで検索完了 |
+| 4-1. 一般内科・臨床医学DB登録 | ✅ 13件登録（目標上限20件だが、個別URLを確認できた質の高い記事のみ厳選） |
+| 4-2. 薬剤・検査・医療機器DB登録 | ✅ 5件登録 |
+| 4-3. 政策・埼玉県医療補助金DB登録 | ✅ 5件登録 |
+| 5-6. TODOファイル作成・保存 | ✅ `.secretary\todos\2026-08-07.md` |
+| 7. Notion Daily Tasks転送 | ✅ page_id `390faf19-4002-81b1-b4a8-d7cd30658b9f` を更新 |
+| 8. Slack転送 | ✅ セルフDM送信完了 |
+
+**合計Notion登録件数: 23件**（一般内科13 + 薬剤検査機器5 + 政策5）
+
+補足：
+- ローカル版Googleカレンダー連携の認証切れは10日以上継続中（過去メモリ記録通り）。ユーザー側での`npm run auth`再認証、またはprompt.txtの既定ツール切り替えを検討する余地あり。
+- 一般内科・臨床医学カテゴリは「上位20件」の枠に対し、確実なURLを持つ記事13件に厳選（不正確なURLの記事は含めていない）。
+
+GitHub push 完了: 2026-08-07.md
+=== 2026-08-07 05:08:11 完了 ===
