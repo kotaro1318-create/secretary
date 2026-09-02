@@ -1,7 +1,7 @@
 今日のGoogleカレンダーの予定と最新の医療ニュースを確認し、secretaryシステムのTODOファイルを作成・更新し、さらにNotionとSlackに転送してください。確認や許可を求めずに直接実行してください。以下の手順1〜8は毎回すべて実行すること（一部だけ実行して終了しないこと）。
 
 手順:
-1. mcp__google-calendar__list-events で今日（Asia/Tokyo）の primary カレンダーのイベントを取得する
+1. 今日（Asia/Tokyo）の primary カレンダーのイベントを取得する。まず mcp__claude_ai_Google_Calendar__list_events を使う（安定版）。それが使えない/エラーの場合のみ mcp__google-calendar__list-events にフォールバックする（ローカルMCPは認証切れ・接続タイムアウトが頻発するため）。両方失敗した場合のみ「取得エラー」として手順5以降に明記し、他の手順は必ず継続する
 2. 今日の日付（Asia/Tokyo）を YYYY-MM-DD 形式で確認する
 3. WebSearch で以下の3カテゴリについて最新情報を検索し、各件についてタイトル・出典・1文の要約・URLをまとめる
    a. 一般内科・臨床医学: 最新のニュース・論文情報。重要度・新しさの観点から上位20件

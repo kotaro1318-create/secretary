@@ -41,7 +41,7 @@ if ($claudeExitCode -ne 0 -or -not $todoOk) {
 
 git config user.email "kotaro.1318@gmail.com"
 git config user.name "secretary-bot"
-git add ".secretary/todos/$today.md"
+git add ".secretary/todos/$today.md" ".secretary/logs/$today.log"
 git diff --cached --quiet
 if ($LASTEXITCODE -ne 0) {
     git commit -m "auto: $today のスケジュールを反映"

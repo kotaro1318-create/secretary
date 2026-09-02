@@ -1,0 +1,29 @@
+=== 2026-08-27 05:00:03 開始 ===
+claude.cmd : Permission allow rule (.claude\settings.local.json): Write(C:\\Users\\hasec\\OneDrive\\Desktop\\secretary\
+\.secretary\\**) is not matched by file permission checks — only Edit(path) rules are. Use Edit(C:\\Users\\hasec\\OneDr
+ive\\Desktop\\secretary\\.secretary\\**) instead (Edit rules cover all file-editing tools).
+発生場所 C:\Users\hasec\Desktop\APP\secretary\run-secretary.ps1:25 文字:21
++ ... = $prompt | & $claudeCmd -p --dangerously-skip-permissions 2>&1 | Out ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Permission allo...editing tools).:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Permission allow rule (.claude\settings.local.json): Write(C:\\Users\\hasec\\Desktop\\APP\\secretary\\.secretary\\**) i
+s not matched by file permission checks — only Edit(path) rules are. Use Edit(C:\\Users\\hasec\\Desktop\\APP\\secretary
+\\.secretary\\**) instead (Edit rules cover all file-editing tools).
+## 実行結果サマリー(2026-08-27)
+
+| 手順 | 結果 |
+|---|---|
+| 1. カレンダー取得 | ✅ 2件（終日: プライマリケア学会、19:00-20:00: TEIJIN） |
+| 2. 日付確認 | ✅ 2026-08-27 (木) |
+| 3. 医療ニュース検索 | ✅ 一般内科20件・薬剤検査医療機器5件・政策/埼玉補助金5件を収集 |
+| 4-1〜4-3. Notion DB登録 | ✅ 計30件登録（20+5+5）。登録後に文字化け5件を検出し、`notion-update-page`で修正・`notion-fetch`で反映確認済み |
+| 5-6. TODOファイル作成 | ✅ `.secretary/todos/2026-08-27.md` 新規作成 |
+| 7. Notion Daily Tasks転送 | ✅ 子ページ「[Day1]Microsoft Copilotマスター講座」を誤削除しかけたが保護して更新完了 |
+| 8. Slack送信 | ✅ 自己DMに送信済み |
+
+補足: Notion一括登録時に既知の文字化け不具合（似た字形の誤字）が今回も再発したため、全件手動チェック→修正し、経緯をメモリに追記しました。
+
+GitHub push 完了: 2026-08-27.md
+=== 2026-08-27 05:10:52 完了 ===
