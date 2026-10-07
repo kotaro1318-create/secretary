@@ -1,0 +1,15 @@
+=== 2026-10-08 05:00:02 開始 ===
+Steps 1–8 all ran. The medical news came to 13 items, below the 20/5/5 targets, because the searches turned up little new material.
+
+- **Calendar:** The claude.ai Google Calendar tool worked and returned 2 online events (20:00 and 21:00). The local `google-calendar` MCP timed out on connect, but the fallback wasn't needed.
+- **Today's file:** I created `.secretary/todos/2026-10-08.md` and saved it.
+- **Notion DB pages created:**
+  - 一般内科・臨床医学: 6 pages (target up to 20)
+  - 薬剤・検査・医療機器: 5 pages
+  - 政策・埼玉県医療補助金: 2 pages (the Saitama subsidies found had all closed, so I left them out)
+- **Notion Secretary Daily Tasks page:** Replaced with today's content. The "最終更新" time on it is a placeholder, 05:00 JST, because I had no clock reading.
+- **Slack:** The self-DM was sent: https://kotaro1318.slack.com/archives/DBKP1SLNS/p1791403327933799
+- **Not fully verified:** Several of the news links are index or listing pages (for example `yakuji.co.jp` category pages, `pmda.go.jp` lists, the NEJM podcast page) rather than articles, because the searches gave nothing more specific.
+
+Separately, the Asana, Atlassian, Intercom, Linear and Figma plugin servers need authorizing in your claude.ai connector settings or via `/mcp`. They weren't needed for this run.
+
